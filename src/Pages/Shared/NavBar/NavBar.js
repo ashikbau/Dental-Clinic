@@ -1,13 +1,17 @@
 import React, { useContext,useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 const NavBar = () => {
     const {user,logOut} = useContext(AuthContext);
+    const navigate = useNavigate();
     
     const handleLogOut =()=>{
         logOut()
-        .then(()=>{})
+        .then(()=>{
+            navigate("/login");
+        })
         .catch(error =>console.log(error))
     }
 
@@ -22,8 +26,29 @@ const NavBar = () => {
         <>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><button onClick={handleLogOut}>Sign Out</button></li>
+
+
+        <span className='mt-8'>{user?.displayName}</span>
         </>
-        : <li><Link to='/login'>LogIn</Link></li>}
+        : <li><Link to='/login'>LogIn</Link></li>
+        }
+         { user?.photoURL ?
+        <>
+        <li><Link to='/profile' className="avatar ">
+        
+  <div className="w-16 rounded-full">
+    <img alt='' src={user?.photoURL}/>
+  </div>
+            
+    </Link></li>
+       
+
+
+        
+        </>
+        : <FaUser></FaUser>
+        }
+     
     </React.Fragment>
 
        

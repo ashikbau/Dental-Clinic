@@ -26,17 +26,29 @@ const SignUp = () => {
     
         const email = event.target.email.value;
         const password = event.target.password.value;
-    
         setSignUPError('');
-        createUser(email,password)
+        // Image Upload
+    const image = event.target.image.files[0]
+    const formData = new FormData()
+    formData.append('image', image)
+    const url = `https://api.imgbb.com/1/upload?key=11bd1c121ffd66ec9354feae4240bbb2`
+    fetch(url, {
+      method: 'POST',
+      body: formData,
+    })
+    .then(res => res.json())
+    .then(imageData =>{
+      console.log(imageData)
+      createUser(email,password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 toast('User Created Successfully.')
-                const userInfo = {
-                    displayName: name
-                }
-                updateUser(userInfo)
+                // const userInfo = {
+                //     displayName: name
+                    
+                // }
+                updateUser(name,imageData.data.display_url)
                     .then(() => {
                         verifyEmail()
                         saveUser(name, email);
@@ -49,6 +61,12 @@ const SignUp = () => {
                 setSignUPError(error.message)
                 setLoading(false)
             });
+
+    })
+
+    
+       
+        
     }
 
 
@@ -147,6 +165,20 @@ const SignUp = () => {
                 data-temp-mail-org='0'
               />
             </div>
+            <div>
+
+            <label htmlFor='image' className='block mb-2 text-sm'>
+                Select Image:
+              </label>
+              <input
+                required
+                type='file'
+                id='image'
+                name='image'
+                accept='image/*'
+              />
+            </div>
+            
            
             <div>
               <label htmlFor='email' className='block mb-2 text-sm'>
