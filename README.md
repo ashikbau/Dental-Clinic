@@ -1,3 +1,22 @@
+Project Name : Dental-Clinic-Client & Dental-Clinic-server
+
+github link client side: https://github.com/ashikbau/Dental-Clinic.git
+github link-server : https://github.com/ashikbau/Dental-Clinic-Server.git
+
+This is an example projects regarding  Dental Clinic operations.This is a simple website about a small medical clinic service provider. Patient can easily can book an appointment in particular Services. In order to use this websites patient have to open an account. Moreover, there also have admin role in this project.
+
+In this projects, I have used HTML,CSS,REACT,TAILWIND,NODE.JS,EXPRESS etc.
+This is very to eassy to install and reuse the projects. you can clone(git clone) it or download from github. After, clone or downloaded you have to install dependencies(npm install) and then use it.
+
+If you would like to upgrade and improve this project you always welcome to contact with me -
+
+Email : alamgu4@gmail.com
+linkedin : https://www.linkedin.com/feed/?trk=seo-authwall-base_google-one-tap-submit
+
+
+Thanks for follow this projects.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
