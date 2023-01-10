@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
 import SmallSpinner from '../../components/Spinner/SmallSpinner';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
@@ -16,6 +17,7 @@ const SignUp = () => {
     const [createdUserEmail, setCreatedUserEmail] = useState('')
     const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
+    useTitle('Sign up')
 
     if (token) {
         navigate('/');

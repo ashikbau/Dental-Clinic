@@ -4,7 +4,9 @@ import bg from '../../../assets/images/bg.png'
 import PrimaryButton from '../../../components/PrimaryButton/PrimaryButton';
 import { HashLink as Link } from 'react-router-hash-link';
 
+
 const Banner = () => {
+   
     return (
         <section
         style ={

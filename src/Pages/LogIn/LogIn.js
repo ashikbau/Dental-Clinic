@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
 import SmallSpinner from '../../components/Spinner/SmallSpinner';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import useToken from '../../hooks/useToken';
 
 const Login = () => {
@@ -13,6 +14,7 @@ const Login = () => {
       setLoading,providerTwitterLogin,providerGitHubLogin   } = useContext(AuthContext);
     const [loginError, setLoginError] = useState(' ');
     // const[userEmail,setUserEmail] = useState(' ')
+    useTitle('Login')
 
     const [loginUserEmail, setLoginUserEmail] = useState('');
     const [token] = useToken(loginUserEmail);

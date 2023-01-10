@@ -2,9 +2,11 @@ import React from 'react';
 import { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Review = () => {
     const {user}= useContext(AuthContext);
+    useTitle('Review')
     
 
     const handleReviewItems =(event)=>{
