@@ -75,6 +75,7 @@ const SignUp = () => {
             const user = result.user;
             console.log(user)
             saveUser(user.displayName,user.email)
+            setLoading(false)
         }).catch( error=>console.error(error.message));
          
          
@@ -85,6 +86,7 @@ const SignUp = () => {
             const user = result.user;
             console.log(user)
             saveUser(user.displayName,user.email)
+            setLoading(false)
         }).catch( error=>console.error(error.message));
          
          
