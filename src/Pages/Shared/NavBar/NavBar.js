@@ -46,7 +46,7 @@ const NavBar = () => {
 
         
         </>
-        : <FaUser></FaUser>
+        : <FaUser ></FaUser>
         }
      
     </React.Fragment>
